@@ -2,7 +2,7 @@ import json
 from pymongo import MongoClient
 
 # --- Connection Setup ---
-CONNECTION_STRING = "mongodb://localhost:27017/"
+CONNECTION_STRING = "mongodb+srv://Neeraj:neeraj7204yadav@cluster0neeraj.q7birvm.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0neeraj"
 DB_NAME = "kisan_sahayak"
 COLLECTION_NAME = "knowledge_base"
 
