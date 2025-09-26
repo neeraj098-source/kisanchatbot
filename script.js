@@ -60,7 +60,7 @@ function appendMessage(message, className) {
 async function getBotReply(userMessage) {
     appendMessage("Soch raha hoon...", "bot-message");
     try {
-        const response = await fetch('http://127.0.0.1:5001/ask', {
+        const response = await fetch('https://kisanchatbot.onrender.com', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             // NAYA: Ab hum sawaal ke saath language bhi bhej rahe hain
