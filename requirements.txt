@@ -5,3 +5,4 @@ thefuzz
 python-Levenshtein
 deep_translator
 gunicorn
+certifi

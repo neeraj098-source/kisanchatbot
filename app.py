@@ -1,6 +1,7 @@
 from flask import Flask, request, jsonify
 from flask_cors import CORS
 from pymongo import MongoClient
+import certifi
 from thefuzz import process
 from deep_translator import GoogleTranslator # NAYI Library import ki hai
 
@@ -9,7 +10,8 @@ CORS(app)
 
 # --- MongoDB Connection ---
 CONNECTION_STRING = "mongodb+srv://Neeraj:neeraj7204yadav@cluster0neeraj.q7birvm.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0neeraj"
-client = MongoClient(CONNECTION_STRING)
+ca = certifi.where()
+client = MongoClient(CONNECTION_STRING, tlsCAFile=ca)
 db = client['kisan_sahayak']
 collection = db['knowledge_base']
 print("Database se connection safal raha!")

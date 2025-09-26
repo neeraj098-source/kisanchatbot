@@ -1,4 +1,5 @@
 import json
+import certifi
 from pymongo import MongoClient
 
 # --- Connection Setup ---
@@ -9,7 +10,9 @@ COLLECTION_NAME = "knowledge_base"
 # --- Script Logic ---
 try:
     # Connect to the database
-    client = MongoClient(CONNECTION_STRING)
+    ca = certifi.where()
+    client = MongoClient(CONNECTION_STRING, tlsCAFile=ca)
+    
     db = client[DB_NAME]
     collection = db[COLLECTION_NAME]
     print("Database se connection safal raha!")
