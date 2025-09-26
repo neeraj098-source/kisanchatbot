@@ -1,0 +1,7 @@
+Flask
+flask_cors
+pymongo
+thefuzz
+python-Levenshtein
+deep_translator
+gunicorn
