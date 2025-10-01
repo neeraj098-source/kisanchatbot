@@ -1,200 +1,172 @@
-/* --- BASIC SETUP & FONT --- */
-:root {
-    --primary-green: #2E7D32;
-    --text-dark: #333;
-    --text-light: #666;
-    --background-light: #F8F9FA;
-    --border-color: #E0E0E0;
-    --user-message-bg: #E1F5FE;
-    --bot-message-bg: #F1F3F4;
-}
-
+/* Basic Reset aur Font-Family set karna */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-}
-
-body {
     font-family: 'Poppins', sans-serif;
-    background-color: var(--background-light);
-    color: var(--text-dark);
 }
 
-/* --- HEADER / NAVIGATION BAR --- */
-.navbar {
+/* SECTION 1: LANDING PAGE ki styling */
+#landing {
+    height: 100vh; /* Puri screen ki height lena */
+    background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('images/green_field.jpg'); 
+    background-size: cover;
+    background-position: center;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
-    padding: 1rem 5%;
-    background-color: white;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-    border-bottom: 1px solid var(--border-color);
+    text-align: center;
+    color: white;
 }
 
-.nav-logo {
-    display: flex;
-    align-items: center;
-    text-decoration: none;
-    color: var(--text-dark);
-    font-weight: 700;
+.hero-content h1 {
+    font-size: 5rem;
+}
+
+.hero-content p {
     font-size: 1.5rem;
+    margin-bottom: 30px;
 }
 
-.logo-icon {
-    height: 40px;
-    margin-right: 10px;
-}
-
-.nav-menu {
-    display: flex;
-    list-style: none;
-    gap: 2rem;
-}
-
-.nav-link {
-    text-decoration: none;
-    color: var(--text-light);
-    font-weight: 500;
-    transition: color 0.3s;
-}
-
-.nav-link:hover {
-    color: var(--primary-green);
-}
-
-.nav-button {
-    padding: 0.75rem 1.5rem;
-    background-color: var(--primary-green);
+.scroll-down-btn {
+    display: inline-block;
+    padding: 12px 30px;
+    background-color: #075e54;
     color: white;
     text-decoration: none;
-    border-radius: 8px;
-    font-weight: 500;
+    border-radius: 30px;
+    font-size: 1.2rem;
     transition: background-color 0.3s;
 }
 
-.nav-button:hover {
-    background-color: #1B5E20;
+.scroll-down-btn:hover {
+    background-color: #128c7e;
 }
 
-/* --- MAIN CONTENT & CHATBOT SECTION --- */
-main {
-    padding: 3rem 5%;
-}
-
-#ai-assistant-section {
-    max-width: 800px;
-    margin: 0 auto;
-}
-
-.assistant-intro {
-    text-align: center;
-    margin-bottom: 2rem;
-}
-
-.assistant-intro h1 {
-    font-size: 2.5rem;
-    margin-bottom: 0.5rem;
-}
-
-.assistant-intro p {
-    font-size: 1.1rem;
-    color: var(--text-light);
-}
-
-/* --- CHATBOT STYLING --- */
-.chat-container {
-    background-color: white;
-    border-radius: 12px;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
-    border: 1px solid var(--border-color);
-    height: 70vh;
+/* SECTION 2: BHASHA CHUNNE ki styling */
+#language-choice {
+    height: 100vh;
+    background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('images/village_front.jpg');
+    background-size: cover;
+    background-position: center;
     display: flex;
     flex-direction: column;
-    overflow: hidden;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
 }
 
+#language-choice h2 {
+    font-size: 3rem;
+    color: white; 
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+    margin-bottom: 40px;
+}
+
+.language-buttons button {
+    padding: 15px 40px;
+    margin: 10px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    border: 2px solid white;
+    background-color: rgba(255, 255, 255, 0.2); /* Thoda transparent */
+    color: white;
+    border-radius: 30px;
+    transition: all 0.3s;
+}
+
+.language-buttons button:hover {
+    background-color: white;
+    color: #075e54;
+}
+
+/* --- CHATBOT KI STYLING --- */
+#chatbot-section {
+    min-height: 100vh;
+    background-color: #ECE5DD;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.chat-container {
+    width: 450px;
+    height: 700px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+    display: flex;
+    flex-direction: column;
+}
+.chat-header {
+    background-color: #075e54;
+    color: white;
+    padding: 15px;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    text-align: center;
+}
 .chat-messages {
     flex-grow: 1;
     padding: 20px;
     overflow-y: auto;
     display: flex;
     flex-direction: column;
-    gap: 15px;
+    gap: 12px;
 }
-
 .message {
     padding: 10px 15px;
-    border-radius: 20px;
+    border-radius: 18px;
     max-width: 75%;
-    line-height: 1.5;
+    line-height: 1.4;
 }
-
 .bot-message {
-    background-color: var(--bot-message-bg);
+    background-color: #e9e9e9;
     align-self: flex-start;
-    border-bottom-left-radius: 4px;
 }
-
 .user-message {
-    background-color: var(--user-message-bg);
+    background-color: #dcf8c6;
     align-self: flex-end;
-    border-bottom-right-radius: 4px;
 }
-
 .chat-input-form {
     display: flex;
-    padding: 1rem;
-    border-top: 1px solid var(--border-color);
-    align-items: center;
+    padding: 10px;
+    border-top: 1px solid #ddd;
 }
-
 #user-input {
     flex-grow: 1;
-    border: 1px solid var(--border-color);
-    border-radius: 25px;
-    padding: 12px 20px;
-    font-size: 1rem;
-    background-color: #F8F9FA;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    padding: 10px 15px;
+    font-size: 16px;
 }
-
 #user-input:focus {
     outline: none;
-    border-color: var(--primary-green);
+    border-color: #075e54;
 }
-
 .chat-input-form button {
-    background-color: var(--primary-green);
+    background-color: #128c7e;
     color: white;
     border: none;
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
+    padding: 10px 20px;
+    border-radius: 20px;
     margin-left: 10px;
     cursor: pointer;
-    font-size: 1.2rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    transition: background-color 0.3s;
+    font-size: 16px;
 }
-
 .chat-input-form button:hover {
-    background-color: #1B5E20;
-}
-
-.send-icon {
-    width: 24px;
-    height: 24px;
+    background-color: #075e54;
 }
 
 /* --- ABOUT ME SECTION KI STYLING --- */
 #about-me {
-    background-color: var(--background-light); /* Naye design ka background color */
+    min-height: 100vh;
+    background-color: #fdf6e3;
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 80px 20px;
+    padding: 40px 20px;
 }
 
 .profile-card {
@@ -212,26 +184,25 @@ main {
     height: 150px;
     border-radius: 50%;
     object-fit: cover;
-    border: 5px solid var(--primary-green);
+    border: 5px solid #075e54;
     margin-bottom: 20px;
 }
 
 .profile-name {
     font-size: 2rem;
-    color: var(--text-dark);
+    color: #5d4037;
     margin-bottom: 5px;
 }
 
 .profile-title {
     font-size: 1.1rem;
-    color: var(--text-light);
+    color: #888;
     margin-bottom: 30px;
 }
 
 .social-links a {
     color: white;
-    background-color: var(--primary-green);
-    margin: 0 10px;
+    background-color: #075e54;
     font-size: 1.5rem;
     text-decoration: none;
     display: inline-block;
